@@ -1,4 +1,4 @@
-@prefix : <https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lfrep.owl#> .
+@prefix : <https://github.com/alex-fonseca/lexfom/lexicalFunctions_lfrep.owl#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -14,8 +14,8 @@
 @prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
 @prefix semiotics: <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#> .
 
-<https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lfrep.owl> a owl:Ontology ;
-	owl:imports <https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lffam.owl> , <https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lfsem.owl> .
+<https://github.com/alex-fonseca/lexfom/lexicalFunctions_lfrep.owl> a owl:Ontology ;
+	owl:imports <https://github.com/alex-fonseca/lexfom/lexicalFunctions_lfsem.owl> , <https://github.com/alex-fonseca/lexfom/lexicalFunctions_lffam.owl> .
 # 
 # 
 # #################################################################
@@ -33,8 +33,7 @@
 # http://www.semanticweb.org/ns/lexfom/lfrep#belongsToLFFamily
 
 <http://www.semanticweb.org/ns/lexfom/lfrep#belongsToLFFamily> a owl:ObjectProperty ;
-	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
-	rdfs:range lffam:lexicalFunctionFamily .
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfrep#classSystem
 
@@ -145,8 +144,7 @@
 
 <http://www.semanticweb.org/ns/lexfom/lfrep#semanticalPerspective> a owl:ObjectProperty ;
 	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#classSystem> ;
-	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
-	rdfs:range lfsem:semanticPerspective .
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> .
 # 
 # 
 # 
