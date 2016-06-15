@@ -1,0 +1,482 @@
+@prefix : <http://www.semanticweb.org/ns/lexfom/lfsem#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://github.com/alex-fonseca/lexfom/lfsem> .
+
+<https://github.com/alex-fonseca/lexfom/lfsem> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#actant
+
+:actant rdf:type owl:DatatypeProperty ;
+        
+        rdfs:subPropertyOf :semanticDerivativeType .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#circonstance
+
+:circonstance rdf:type owl:DatatypeProperty ;
+              
+              rdfs:subPropertyOf :semanticDerivativeType .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#complexity
+
+:complexity rdf:type owl:DatatypeProperty .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#potentiel
+
+:potentiel rdf:type owl:DatatypeProperty ;
+           
+           rdfs:subPropertyOf :semanticDerivativeType .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#semanticDerivativeType
+
+:semanticDerivativeType rdf:type owl:DatatypeProperty .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#standardness
+
+:standardness rdf:type owl:DatatypeProperty ;
+              
+              rdfs:range xsd:string ;
+              
+              rdfs:domain :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#virtual
+
+:virtual rdf:type owl:DatatypeProperty ;
+         
+         rdfs:subPropertyOf :semanticDerivativeType .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#actionEvent
+
+:actionEvent rdf:type owl:Class ;
+             
+             rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#causativity
+
+:causativity rdf:type owl:Class ;
+             
+             rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#elementSet
+
+:elementSet rdf:type owl:Class ;
+            
+            rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#equivalence
+
+:equivalence rdf:type owl:Class ;
+             
+             rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#form
+
+:form rdf:type owl:Class ;
+      
+      rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#location
+
+:location rdf:type owl:Class ;
+          
+          rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#opposition
+
+:opposition rdf:type owl:Class ;
+            
+            rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#participants
+
+:participants rdf:type owl:Class ;
+              
+              rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#phaseAspect
+
+:phaseAspect rdf:type owl:Class ;
+             
+             rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#qualification
+
+:qualification rdf:type owl:Class ;
+               
+               rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#semanticPerspective
+
+:semanticPerspective rdf:type owl:Class .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#semanticallyEmptyVerb
+
+:semanticallyEmptyVerb rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :semanticPerspective .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#supportVerb
+
+:supportVerb rdf:type owl:Class ;
+             
+             rdfs:subClassOf :semanticPerspective .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#attempt
+
+:attempt rdf:type owl:NamedIndividual ,
+                  :actionEvent .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#causativity
+
+:causativity rdf:type owl:NamedIndividual ,
+                      :causativity .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#continuation
+
+:continuation rdf:type owl:NamedIndividual ,
+                       :phaseAspect .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#conversionEquiv
+
+:conversionEquiv rdf:type owl:NamedIndividual ,
+                          :equivalence .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#conversionOpposit
+
+:conversionOpposit rdf:type owl:NamedIndividual ,
+                            :opposition .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#creation
+
+:creation rdf:type owl:NamedIndividual ,
+                   :actionEvent .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#decreaseDegration
+
+:decreaseDegration rdf:type owl:NamedIndividual ,
+                            :actionEvent .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#disparationExistencialCease
+
+:disparationExistencialCease rdf:type owl:NamedIndividual ,
+                                      :actionEvent .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#duration
+
+:duration rdf:type owl:NamedIndividual ,
+                   :phaseAspect .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#externalActant
+
+:externalActant rdf:type owl:NamedIndividual ,
+                         :participants .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#family
+
+:family rdf:type owl:NamedIndividual ,
+                 :elementSet .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#genderEquivalent
+
+:genderEquivalent rdf:type owl:NamedIndividual ,
+                           :opposition .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#hierarchies
+
+:hierarchies rdf:type owl:NamedIndividual ,
+                      :elementSet .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#imminence
+
+:imminence rdf:type owl:NamedIndividual ,
+                    :actionEvent .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#increaseImprovement
+
+:increaseImprovement rdf:type owl:NamedIndividual ,
+                              :actionEvent .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#instrument
+
+:instrument rdf:type owl:NamedIndividual ,
+                     :form .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#intensity
+
+:intensity rdf:type owl:NamedIndividual ,
+                    :qualification .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#judgement
+
+:judgement rdf:type owl:NamedIndividual ,
+                    :qualification .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#keywordActant
+
+:keywordActant rdf:type owl:NamedIndividual ,
+                        :participants .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#leaderTeam
+
+:leaderTeam rdf:type owl:NamedIndividual ,
+                     :elementSet .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#manifestation
+
+:manifestation rdf:type owl:NamedIndividual ,
+                        :actionEvent .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#measure
+
+:measure rdf:type owl:NamedIndividual ,
+                  :elementSet .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#meronymyHolonymy
+
+:meronymyHolonymy rdf:type owl:NamedIndividual ,
+                           :elementSet .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#nonOperationRefusal
+
+:nonOperationRefusal rdf:type owl:NamedIndividual ,
+                              :actionEvent .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#physicalAppearance
+
+:physicalAppearance rdf:type owl:NamedIndividual ,
+                             :qualification .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#preparation
+
+:preparation rdf:type owl:NamedIndividual ,
+                      :phaseAspect .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#realizationForm
+
+:realizationForm rdf:type owl:NamedIndividual ,
+                          :form .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#regularElementSet
+
+:regularElementSet rdf:type owl:NamedIndividual ,
+                            :elementSet .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#reiteration
+
+:reiteration rdf:type owl:NamedIndividual ,
+                      :phaseAspect .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#resultPhase
+
+:resultPhase rdf:type owl:NamedIndividual ,
+                      :phaseAspect .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#semanticOpposite
+
+:semanticOpposite rdf:type owl:NamedIndividual ,
+                           :opposition .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#semanticallyEmptyVerb
+
+:semanticallyEmptyVerb rdf:type owl:NamedIndividual ,
+                                :semanticallyEmptyVerb .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#similarLexies
+
+:similarLexies rdf:type owl:NamedIndividual ,
+                        :equivalence .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#spatialTemporal
+
+:spatialTemporal rdf:type owl:NamedIndividual ,
+                          :location .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#start
+
+:start rdf:type owl:NamedIndividual ,
+                :phaseAspect .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#supportVerb
+
+:supportVerb rdf:type owl:NamedIndividual ,
+                      :supportVerb .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#syntacticConversion
+
+:syntacticConversion rdf:type owl:NamedIndividual ,
+                              :equivalence .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#termination
+
+:termination rdf:type owl:NamedIndividual ,
+                      :phaseAspect .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#typicalPlace
+
+:typicalPlace rdf:type owl:NamedIndividual ,
+                       :location .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#utilizationForm
+
+:utilizationForm rdf:type owl:NamedIndividual ,
+                          :form .
+
+
+
+###  https://github.com/alex-fonseca/lexfom/lfsem#utilizationTypicalOperation
+
+:utilizationTypicalOperation rdf:type owl:NamedIndividual ,
+                                      :actionEvent .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+

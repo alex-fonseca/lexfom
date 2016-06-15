@@ -1,0 +1,174 @@
+@prefix : <http://www.semanticweb.org/ns/lexfom/lfrel#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix lfrep: <http://www.semanticweb.org/ns/lexfom/lfrep#> .
+@prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix semiotics: <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#> .
+
+<http://www.semanticweb.org/ns/lexfom/lfrel> a owl:Ontology ;
+	owl:imports <http://www.w3.org/ns/lemon/ontolex> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasCollocate
+
+lfrep:hasCollocate a owl:ObjectProperty ;
+	rdfs:domain lfrep:LexicalRelation , _:genid1 .
+
+_:genid1 a owl:Restriction ;
+	owl:onProperty lfrep:hasCollocate ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass lfrep:LexicalRelation .
+
+lfrep:hasCollocate rdfs:range ontolex:LexicalSense .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasKeyWord
+
+lfrep:hasKeyWord a owl:ObjectProperty ;
+	rdfs:domain lfrep:LexicalRelation , _:genid2 .
+
+_:genid2 a owl:Restriction ;
+	owl:onProperty lfrep:hasKeyWord ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass lfrep:LexicalRelation .
+
+lfrep:hasKeyWord rdfs:range ontolex:LexicalSense .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasLexicalFunction
+
+lfrep:hasLexicalFunction a owl:ObjectProperty ;
+	rdfs:domain _:genid3 .
+
+_:genid3 a owl:Restriction ;
+	owl:onProperty lfrep:hasLexicalFunction ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass lfrep:LexicalRelation .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasMarkers
+
+lfrep:hasMarkers a owl:ObjectProperty ;
+	rdfs:domain _:genid4 .
+
+_:genid4 a owl:Restriction ;
+	owl:onProperty lfrep:hasMarkers ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass lfrep:LexicalRelation .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#markerKeyAfter
+
+lfrep:markerKeyAfter a owl:ObjectProperty ;
+	rdfs:subPropertyOf lfrep:hasMarkers .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#markerKeyBefore
+
+lfrep:markerKeyBefore a owl:ObjectProperty ;
+	rdfs:subPropertyOf lfrep:hasMarkers .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#markerValueAfter
+
+lfrep:markerValueAfter a owl:ObjectProperty ;
+	rdfs:subPropertyOf lfrep:hasMarkers .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#markerValueBefore
+
+lfrep:markerValueBefore a owl:ObjectProperty ;
+	rdfs:subPropertyOf lfrep:hasMarkers .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#actant
+
+lfrep:actant a owl:DatatypeProperty ;
+	rdfs:subPropertyOf lfrep:semanticDerivativeType .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#circonstance
+
+lfrep:circonstance a owl:DatatypeProperty ;
+	rdfs:subPropertyOf lfrep:semanticDerivativeType .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#complexity
+
+lfrep:complexity a owl:DatatypeProperty .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#potentiel
+
+lfrep:potentiel a owl:DatatypeProperty ;
+	rdfs:subPropertyOf lfrep:semanticDerivativeType .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#semanticDerivativeType
+
+lfrep:semanticDerivativeType a owl:DatatypeProperty .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#standardness
+
+lfrep:standardness a owl:DatatypeProperty ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#virtual
+
+lfrep:virtual a owl:DatatypeProperty ;
+	rdfs:subPropertyOf lfrep:semanticDerivativeType .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#LexicalRelation
+
+lfrep:LexicalRelation a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#ParadigmaticRelation
+
+lfrep:ParadigmaticRelation a owl:Class ;
+	rdfs:subClassOf lfrep:LexicalRelation .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#SyntagmaticRelation
+
+lfrep:SyntagmaticRelation a owl:Class ;
+	rdfs:subClassOf lfrep:LexicalRelation .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#LR-ParadigmaticRelation
+
+lfrep:LR-ParadigmaticRelation a owl:NamedIndividual , lfrep:ParadigmaticRelation .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#LR-SyntagmaticRelation
+
+lfrep:LR-SyntagmaticRelation a owl:NamedIndividual , lfrep:SyntagmaticRelation .
+# 
+# Generated by the OWL API (version 4.2.3.20160319-0906) https://github.com/owlcs/owlapi
