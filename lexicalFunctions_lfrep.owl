@@ -1,4 +1,4 @@
-@prefix : <http://www.semanticweb.org/ns/lexfom/lfrep#> .
+@prefix : <https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lfrep.owl#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -13,616 +13,385 @@
 @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
 @prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
 @prefix semiotics: <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#> .
-@base <https://github.com/alex-fonseca/lexfom/lfrep> .
 
-<https://github.com/alex-fonseca/lexfom/lfrep> rdf:type owl:Ontology ;
-                                               
-                                               owl:imports <https://github.com/alex-fonseca/lexfom/lffam> ,
-                                                           <https://github.com/alex-fonseca/lexfom/lfsem> .
-
-
-#################################################################
-#
-#    Object Properties
-#
-#################################################################
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#andComposition
-
-:andComposition rdf:type owl:ObjectProperty ;
-                
-                rdfs:subPropertyOf :complexCompositionType .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#belongsToLFFamily
-
-:belongsToLFFamily rdf:type owl:ObjectProperty ;
-                   
-                   rdfs:range lffam:lexicalFunctionFamily ;
-                   
-                   rdfs:domain :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#classSystem
-
-:classSystem rdf:type owl:ObjectProperty ;
-             
-             rdfs:domain :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#combinatorialPerspective
-
-:combinatorialPerspective rdf:type owl:ObjectProperty ;
-                          
-                          rdfs:subPropertyOf :classSystem .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#communicationalPerspective
-
-:communicationalPerspective rdf:type owl:ObjectProperty ;
-                            
-                            rdfs:subPropertyOf :classSystem .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#complexCompositionType
-
-:complexCompositionType rdf:type owl:ObjectProperty ;
-                        
-                        rdfs:domain :componentComplexLF ;
-                        
-                        rdfs:range :componentComplexLF .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#constituentComplexLF
-
-:constituentComplexLF rdf:type owl:ObjectProperty ;
-                      
-                      rdfs:domain :complexLF ;
-                      
-                      rdfs:range :componentComplexLF .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#correspondsTo
-
-:correspondsTo rdf:type owl:ObjectProperty ;
-               
-               rdfs:domain :componentComplexLF ;
-               
-               rdfs:range :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#dimension
-
-:dimension rdf:type owl:ObjectProperty ;
-           
-           rdfs:range :dimensionType ;
-           
-           rdfs:domain :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#gloss
-
-:gloss rdf:type owl:ObjectProperty .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#hasDimensionMode
-
-:hasDimensionMode rdf:type owl:ObjectProperty ;
-                  
-                  rdfs:subPropertyOf owl:topObjectProperty ;
-                  
-                  rdfs:range :dimensionMode ;
-                  
-                  rdfs:domain :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#hasEquivDegree
-
-:hasEquivDegree rdf:type owl:ObjectProperty ;
-                
-                rdfs:range :equivalenceDegree ;
-                
-                rdfs:domain :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#hasIntensificationMode
-
-:hasIntensificationMode rdf:type owl:ObjectProperty ;
-                        
-                        rdfs:range :intensificationMode ;
-                        
-                        rdfs:domain :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#hasLFMeaning
-
-:hasLFMeaning rdf:type owl:ObjectProperty ;
-              
-              rdfs:domain :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#hasSpatialSpecification
-
-:hasSpatialSpecification rdf:type owl:ObjectProperty ;
-                         
-                         rdfs:domain :lexicalFunction ;
-                         
-                         rdfs:range :spatialSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#hasSyntActant
-
-:hasSyntActant rdf:type owl:ObjectProperty ;
-               
-               rdfs:domain :lexicalFunction ;
-               
-               rdfs:range :syntacticActant .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#hasSyntActantModifier
-
-:hasSyntActantModifier rdf:type owl:ObjectProperty ;
-                       
-                       rdfs:domain :lexicalFunction ;
-                       
-                       rdfs:range :syntacticActantModifiers .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#justapositionComposition
-
-:justapositionComposition rdf:type owl:ObjectProperty ;
-                          
-                          rdfs:subPropertyOf :complexCompositionType .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#orComposition
-
-:orComposition rdf:type owl:ObjectProperty ;
-               
-               rdfs:subPropertyOf :complexCompositionType .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#plusComposition
-
-:plusComposition rdf:type owl:ObjectProperty ;
-                 
-                 rdfs:subPropertyOf :complexCompositionType .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#posPerspective
-
-:posPerspective rdf:type owl:ObjectProperty ;
-                
-                rdfs:subPropertyOf :classSystem .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#semanticalPerspective
-
-:semanticalPerspective rdf:type owl:ObjectProperty ;
-                       
-                       rdfs:range lfsem:semanticPerspective ;
-                       
-                       rdfs:subPropertyOf :classSystem ;
-                       
-                       rdfs:domain :lexicalFunction .
-
-
-
-
-
-#################################################################
-#
-#    Data properties
-#
-#################################################################
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#actant
-
-:actant rdf:type owl:DatatypeProperty ;
-        
-        rdfs:subPropertyOf :semanticDerivativeType .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#circonstance
-
-:circonstance rdf:type owl:DatatypeProperty ;
-              
-              rdfs:subPropertyOf :semanticDerivativeType .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#complexity
-
-:complexity rdf:type owl:DatatypeProperty .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#potentiel
-
-:potentiel rdf:type owl:DatatypeProperty ;
-           
-           rdfs:subPropertyOf :semanticDerivativeType .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#semanticDerivativeType
-
-:semanticDerivativeType rdf:type owl:DatatypeProperty .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#standardness
-
-:standardness rdf:type owl:DatatypeProperty ;
-              
-              rdfs:range xsd:string .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#virtual
-
-:virtual rdf:type owl:DatatypeProperty ;
-         
-         rdfs:subPropertyOf :semanticDerivativeType .
-
-
-
-
-
-#################################################################
-#
-#    Classes
-#
-#################################################################
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#circunstanceSpecification
-
-:circunstanceSpecification rdf:type owl:Class .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#complexLF
-
-:complexLF rdf:type owl:Class ;
-           
-           rdfs:subClassOf :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#componentComplexLF
-
-:componentComplexLF rdf:type owl:Class .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#dimensionMode
-
-:dimensionMode rdf:type owl:Class .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#dimensionType
-
-:dimensionType rdf:type owl:Class .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#equivalenceDegree
-
-:equivalenceDegree rdf:type owl:Class .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#intensificationMode
-
-:intensificationMode rdf:type owl:Class .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#lexicalFunction
-
-:lexicalFunction rdf:type owl:Class .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#simpleLF
-
-:simpleLF rdf:type owl:Class ;
-          
-          rdfs:subClassOf :lexicalFunction .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#spatialSpecification
-
-:spatialSpecification rdf:type owl:Class .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#syntacticActant
-
-:syntacticActant rdf:type owl:Class .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#syntacticActantModifiers
-
-:syntacticActantModifiers rdf:type owl:Class .
-
-
-
-
-
-#################################################################
-#
-#    Individuals
-#
-#################################################################
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#ASynt_1
-
-:ASynt_1 rdf:type owl:NamedIndividual ,
-                  :syntacticActant .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#ASynt_2
-
-:ASynt_2 rdf:type owl:NamedIndividual ,
-                  :syntacticActant .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#ASynt_3
-
-:ASynt_3 rdf:type owl:NamedIndividual ,
-                  :syntacticActant .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#ASynt_4
-
-:ASynt_4 rdf:type owl:NamedIndividual ,
-                  :syntacticActant .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#ASynt_xt
-
-:ASynt_xt rdf:type owl:NamedIndividual ,
-                   :syntacticActant .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#XYchange
-
-:XYchange rdf:type owl:NamedIndividual ,
-                   :syntacticActantModifiers .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#equiIntersection
-
-:equiIntersection rdf:type owl:NamedIndividual ,
-                           :equivalenceDegree .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#equiMore
-
-:equiMore rdf:type owl:NamedIndividual ,
-                   :equivalenceDegree .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#equivLess
-
-:equivLess rdf:type owl:NamedIndividual ,
-                    :equivalenceDegree .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#inst
-
-:inst rdf:type owl:NamedIndividual ,
-               :circunstanceSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#lfAppliedToActant
-
-:lfAppliedToActant rdf:type owl:NamedIndividual ,
-                            :syntacticActantModifiers .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#loc
-
-:loc rdf:type owl:NamedIndividual ,
-              :circunstanceSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#med
-
-:med rdf:type owl:NamedIndividual ,
-              :circunstanceSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#mod
-
-:mod rdf:type owl:NamedIndividual ,
-              :circunstanceSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeAmount
-
-:modeAmount rdf:type owl:NamedIndividual ,
-                     :dimensionMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeBehaviour
-
-:modeBehaviour rdf:type owl:NamedIndividual ,
-                        :intensificationMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeEffect
-
-:modeEffect rdf:type owl:NamedIndividual ,
-                     :intensificationMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeHeight
-
-:modeHeight rdf:type owl:NamedIndividual ,
-                     :intensificationMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeLength
-
-:modeLength rdf:type owl:NamedIndividual ,
-                     :intensificationMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeSize
-
-:modeSize rdf:type owl:NamedIndividual ,
-                   :intensificationMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeSpeed
-
-:modeSpeed rdf:type owl:NamedIndividual ,
-                    :intensificationMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeStrength
-
-:modeStrength rdf:type owl:NamedIndividual ,
-                       :intensificationMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeThickness
-
-:modeThickness rdf:type owl:NamedIndividual ,
-                        :intensificationMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeTime
-
-:modeTime rdf:type owl:NamedIndividual ,
-                   :dimensionMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#modeWidth
-
-:modeWidth rdf:type owl:NamedIndividual ,
-                    :intensificationMode .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#paradigmaticLF
-
-:paradigmaticLF rdf:type owl:NamedIndividual ,
-                         :dimensionType .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#res
-
-:res rdf:type owl:NamedIndividual ,
-              :circunstanceSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#setOFIndividuals
-
-:setOFIndividuals rdf:type owl:NamedIndividual ,
-                           :syntacticActantModifiers .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#simultaniousActants
-
-:simultaniousActants rdf:type owl:NamedIndividual ,
-                              :syntacticActantModifiers .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#spatialAB
-
-:spatialAB rdf:type owl:NamedIndividual ,
-                    :spatialSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#spatialAD
-
-:spatialAD rdf:type owl:NamedIndividual ,
-                    :spatialSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#spatialIN
-
-:spatialIN rdf:type owl:NamedIndividual ,
-                    :spatialSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#spatialTEMP
-
-:spatialTEMP rdf:type owl:NamedIndividual ,
-                      :spatialSpecification .
-
-
-
-###  https://github.com/alex-fonseca/lexfom/lfrep#syntagmaticLF
-
-:syntagmaticLF rdf:type owl:NamedIndividual ,
-                        :dimensionType .
-
-
-
-
-###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
-
+<https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lfrep.owl> a owl:Ontology ;
+	owl:imports <https://github.com/alex-fonseca/lexfom/lfsem> , <https://github.com/alex-fonseca/lexfom/lffam> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#andComposition
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#andComposition> a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#complexCompositionType> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#belongsToLFFamily
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#belongsToLFFamily> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
+	rdfs:range lffam:lexicalFunctionFamily .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#classSystem
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#classSystem> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#combinatorialPerspective
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#combinatorialPerspective> a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#classSystem> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#communicationalPerspective
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#communicationalPerspective> a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#classSystem> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#complexCompositionType
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#complexCompositionType> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#componentComplexLF> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#componentComplexLF> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#constituentComplexLF
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#constituentComplexLF> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#complexLF> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#componentComplexLF> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#correspondsTo
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#correspondsTo> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#componentComplexLF> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#dimension
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#dimension> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#dimensionType> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#gloss
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#gloss> a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasDimensionMode
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#hasDimensionMode> a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#dimensionMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasEquivDegree
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#hasEquivDegree> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#equivalenceDegree> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasIntensificationMode
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#hasIntensificationMode> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasLFMeaning
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#hasLFMeaning> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasSpatialSpecification
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#hasSpatialSpecification> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#spatialSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasSyntActant
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#hasSyntActant> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActant> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#hasSyntActantModifier
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#hasSyntActantModifier> a owl:ObjectProperty ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
+	rdfs:range <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActantModifiers> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#justapositionComposition
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#justapositionComposition> a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#complexCompositionType> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#orComposition
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#orComposition> a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#complexCompositionType> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#plusComposition
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#plusComposition> a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#complexCompositionType> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#posPerspective
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#posPerspective> a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#classSystem> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#semanticalPerspective
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#semanticalPerspective> a owl:ObjectProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#classSystem> ;
+	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> ;
+	rdfs:range lfsem:semanticPerspective .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#actant
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#actant> a owl:DatatypeProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#semanticDerivativeType> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#circonstance
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#circonstance> a owl:DatatypeProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#semanticDerivativeType> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#complexity
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#complexity> a owl:DatatypeProperty .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#potentiel
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#potentiel> a owl:DatatypeProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#semanticDerivativeType> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#semanticDerivativeType
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#semanticDerivativeType> a owl:DatatypeProperty .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#standardness
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#standardness> a owl:DatatypeProperty ;
+	rdfs:range xsd:string .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#virtual
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#virtual> a owl:DatatypeProperty ;
+	rdfs:subPropertyOf <http://www.semanticweb.org/ns/lexfom/lfrep#semanticDerivativeType> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#circunstanceSpecification
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#circunstanceSpecification> a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#complexLF
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#complexLF> a owl:Class ;
+	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#componentComplexLF
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#componentComplexLF> a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#dimensionMode
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#dimensionMode> a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#dimensionType
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#dimensionType> a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#equivalenceDegree
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#equivalenceDegree> a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#simpleLF
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#simpleLF> a owl:Class ;
+	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#spatialSpecification
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#spatialSpecification> a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActant
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActant> a owl:Class .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActantModifiers
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActantModifiers> a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_1
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_1> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActant> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_2
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_2> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActant> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_3
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_3> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActant> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_4
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_4> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActant> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_xt
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#ASynt_xt> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActant> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#XYchange
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#XYchange> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActantModifiers> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#equiIntersection
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#equiIntersection> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#equivalenceDegree> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#equiMore
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#equiMore> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#equivalenceDegree> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#equivLess
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#equivLess> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#equivalenceDegree> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#inst
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#inst> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#circunstanceSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#lfAppliedToActant
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#lfAppliedToActant> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActantModifiers> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#loc
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#loc> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#circunstanceSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#med
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#med> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#circunstanceSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#mod
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#mod> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#circunstanceSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeAmount
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeAmount> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#dimensionMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeBehaviour
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeBehaviour> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeEffect
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeEffect> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeHeight
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeHeight> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeLength
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeLength> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeSize
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeSize> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeSpeed
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeSpeed> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeStrength
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeStrength> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeThickness
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeThickness> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeTime
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeTime> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#dimensionMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#modeWidth
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#modeWidth> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#paradigmaticLF
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#paradigmaticLF> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#dimensionType> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#res
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#res> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#circunstanceSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#setOFIndividuals
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#setOFIndividuals> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActantModifiers> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#simultaniousActants
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#simultaniousActants> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActantModifiers> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#spatialAB
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#spatialAB> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#spatialSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#spatialAD
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#spatialAD> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#spatialSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#spatialIN
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#spatialIN> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#spatialSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#spatialTEMP
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#spatialTEMP> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#spatialSpecification> .
+# 
+# http://www.semanticweb.org/ns/lexfom/lfrep#syntagmaticLF
+
+<http://www.semanticweb.org/ns/lexfom/lfrep#syntagmaticLF> a owl:NamedIndividual , <http://www.semanticweb.org/ns/lexfom/lfrep#dimensionType> .
+# 
+# Generated by the OWL API (version 4.2.3.20160319-0906) https://github.com/owlcs/owlapi
