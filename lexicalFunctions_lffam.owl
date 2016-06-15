@@ -41,7 +41,6 @@
 # http://www.semanticweb.org/ns/lexfom/lffam#standardness
 
 <http://www.semanticweb.org/ns/lexfom/lffam#standardness> a owl:DatatypeProperty ;
-	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lffam#lexicalFunctionFamily> ;
 	rdfs:range xsd:string .
 # 
 # http://www.semanticweb.org/ns/lexfom/lffam#virtual
@@ -113,14 +112,10 @@
 <http://www.semanticweb.org/ns/lexfom/lffam#circumstantialNouns> a owl:Class ;
 	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lffam#paradigmaticLFF> .
 # 
-# http://www.semanticweb.org/ns/lexfom/lffam#lexicalFunctionFamily
-
-<http://www.semanticweb.org/ns/lexfom/lffam#lexicalFunctionFamily> a owl:Class .
-# 
 # http://www.semanticweb.org/ns/lexfom/lffam#paradigmaticLFF
 
 <http://www.semanticweb.org/ns/lexfom/lffam#paradigmaticLFF> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lffam#lexicalFunctionFamily> .
+	rdfs:subClassOf :lexicalFunctionFamily .
 # 
 # http://www.semanticweb.org/ns/lexfom/lffam#phasalVerbs
 
@@ -170,7 +165,11 @@
 # http://www.semanticweb.org/ns/lexfom/lffam#syntagmaticLFF
 
 <http://www.semanticweb.org/ns/lexfom/lffam#syntagmaticLFF> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lffam#lexicalFunctionFamily> .
+	rdfs:subClassOf :lexicalFunctionFamily .
+# 
+# https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lffam.owl#lexicalFunctionFamily
+
+:lexicalFunctionFamily a owl:Class .
 # 
 # 
 # 

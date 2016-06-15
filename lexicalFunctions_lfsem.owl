@@ -41,7 +41,6 @@
 # http://www.semanticweb.org/ns/lexfom/lfsem#standardness
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#standardness> a owl:DatatypeProperty ;
-	rdfs:domain <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> ;
 	rdfs:range xsd:string .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#virtual
@@ -61,66 +60,66 @@
 # http://www.semanticweb.org/ns/lexfom/lfsem#actionEvent
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#actionEvent> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#causativity
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#causativity> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#elementSet
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#elementSet> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#equivalence
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#equivalence> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#form
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#form> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#location
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#location> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#opposition
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#opposition> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#participants
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#participants> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#phaseAspect
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#phaseAspect> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#qualification
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#qualification> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
-# 
-# http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective
-
-<http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> a owl:Class .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#semanticallyEmptyVerb
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#semanticallyEmptyVerb> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
 # 
 # http://www.semanticweb.org/ns/lexfom/lfsem#supportVerb
 
 <http://www.semanticweb.org/ns/lexfom/lfsem#supportVerb> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/ns/lexfom/lfsem#semanticPerspective> .
+	rdfs:subClassOf :semanticPerspective .
+# 
+# https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lfsem.owl#semanticPerspective
+
+:semanticPerspective a owl:Class .
 # 
 # 
 # 

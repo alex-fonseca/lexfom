@@ -7,15 +7,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix lffam: <http://www.semanticweb.org/ns/lexfom/lffam#> .
-@prefix lfsem: <http://www.semanticweb.org/ns/lexfom/lfsem#> .
+@prefix lffam: <https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lffam.owl#> .
+@prefix lfsem: <https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lfsem.owl#> .
 @prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
 @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
 @prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
 @prefix semiotics: <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#> .
 
 <https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lfrep.owl> a owl:Ontology ;
-	owl:imports <https://github.com/alex-fonseca/lexfom/lfsem> , <https://github.com/alex-fonseca/lexfom/lffam> .
+	owl:imports <https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lffam.owl> , <https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lfsem.owl> .
 # 
 # 
 # #################################################################

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://github.com/alex-fonseca/lexfom/blob/master/lexicalFunctions_lffam.owl" uri="file:/Users/afonseca/Dropbox/Projets/ProjetThese/RLF/lexfom/lexicalFunctions_lffam.owl"/>
+    <uri id="User Entered Import Resolution" name="https://github.com/alex-fonseca/lexfom/lffam" uri="file:/Users/afonseca/Dropbox/Projets/ProjetThese/RLF/lexfom/lexicalFunctions_lffam.owl"/>
+    <uri id="User Entered Import Resolution" name="https://github.com/alex-fonseca/lexfom/lfsem" uri="file:/Users/afonseca/Dropbox/Projets/ProjetThese/RLF/lexfom/lexicalFunctions_lfsem.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>
