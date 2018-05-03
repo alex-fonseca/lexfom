@@ -1,0 +1,845 @@
+@prefix : <C:/Users/bd291193/workspace/lexfom/lexfom/lffam.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <C:/Users/bd291193/workspace/lexfom/lexfom/lffam.owl> .
+
+<C:/Users/bd291193/workspace/lexfom/lexfom/lffam.owl> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#lexicalFunctionFamily
+
+:lexicalFunctionFamily rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#Fact
+
+:Fact rdf:type owl:Class ;
+                                                  
+         rdfs:subClassOf :realizationVerbs .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#Func
+
+:Func rdf:type owl:Class ;
+                                                  
+     rdfs:subClassOf :supportVerbs .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#Labor
+
+:Labor rdf:type owl:Class ;
+                                                   
+    rdfs:subClassOf :supportVerbs .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#Labreal
+
+:Labreal rdf:type owl:Class ;
+                                                     
+    rdfs:subClassOf :realizationVerbs .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#Oper
+
+:Oper rdf:type owl:Class ;
+                                                  
+    rdfs:subClassOf :supportVerbs .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#Real
+
+:Real rdf:type owl:Class ;
+                                                  
+    rdfs:subClassOf :realizationVerbs .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#actantialAdjectives
+
+:actantialAdjectives rdf:type owl:Class ;
+                                                                 
+    rdfs:subClassOf :paradigmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#actantialAdverbs
+
+:actantialAdverbs rdf:type owl:Class ;
+                                                              
+    rdfs:subClassOf :paradigmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#actantialNouns
+
+:actantialNouns rdf:type owl:Class ;
+                                                            
+    rdfs:subClassOf :paradigmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#causationVerbs
+
+:causationVerbs rdf:type owl:Class ;
+                                                            
+    rdfs:subClassOf :syntagmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#circumstantialNouns
+
+:circumstantialNouns rdf:type owl:Class ;
+                                                                 
+    rdfs:subClassOf :paradigmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#paradigmaticLFF
+
+:paradigmaticLFF rdf:type owl:Class ;
+                                                             
+    rdfs:subClassOf :lexicalFunctionFamily .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#phasalVerbs
+
+:phasalVerbs rdf:type owl:Class ;
+                                                         
+    rdfs:subClassOf :syntagmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#potentialActantialAdjectives
+
+:potentialActantialAdjectives rdf:type owl:Class ;
+                                                                          
+    rdfs:subClassOf :paradigmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#qualifyingActantialAdjectives
+
+:qualifyingActantialAdjectives rdf:type owl:Class ;
+                                                                           
+    rdfs:subClassOf :paradigmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#realizationVerbs
+
+:realizationVerbs rdf:type owl:Class ;
+                                                              
+    rdfs:subClassOf :syntagmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#resultative
+
+:resultative rdf:type owl:Class ;
+                                                         
+    rdfs:subClassOf :paradigmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#setPart
+
+:setPart rdf:type owl:Class ;
+                                                     
+    rdfs:subClassOf :paradigmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#spaceLocalization
+
+:spaceLocalization rdf:type owl:Class ;
+                                                               
+    rdfs:subClassOf :syntagmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#supportVerbs
+
+:supportVerbs rdf:type owl:Class ;
+                                                          
+    rdfs:subClassOf :syntagmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#syntacticConversion
+
+:syntacticConversion rdf:type owl:Class ;
+                                                                 
+    rdfs:subClassOf :paradigmaticLFF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#syntagmaticLFF
+
+:syntagmaticLFF rdf:type owl:Class ;
+                                                            
+    rdfs:subClassOf :lexicalFunctionFamily .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Anti
+
+:LFF-par-Anti rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Cap
+
+:LFF-par-Cap rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Contr
+
+:LFF-par-Contr rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Conv
+
+:LFF-par-Conv rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Equip
+
+:LFF-par-Equip rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Figur
+
+:LFF-par-Figur rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Gener
+
+:LFF-par-Gener rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Imper
+
+:LFF-par-Imper rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Mult
+
+:LFF-par-Mult rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Non
+
+:LFF-par-Non rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Pred
+
+:LFF-par-Pred rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Sing
+
+:LFF-par-Sing rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-Syn
+
+:LFF-par-Syn rdf:type :paradigmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actAdj-A1
+
+:LFF-par-actAdj-A1 rdf:type :actantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actAdj-A2
+
+:LFF-par-actAdj-A2 rdf:type :actantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actAdj-A3
+
+:LFF-par-actAdj-A3 rdf:type :actantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actAdj-A4
+
+:LFF-par-actAdj-A4 rdf:type :actantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actAdv-Adv1
+
+:LFF-par-actAdv-Adv1 rdf:type :actantialAdverbs , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actAdv-Adv2
+
+:LFF-par-actAdv-Adv2 rdf:type :actantialAdverbs , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actAdv-Adv3
+
+:LFF-par-actAdv-Adv3 rdf:type :actantialAdverbs , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actNoun-S1
+
+:LFF-par-actNoun-S1 rdf:type :actantialNouns , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actNoun-S2
+
+:LFF-par-actNoun-S2 rdf:type :actantialNouns , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actNoun-S3
+
+:LFF-par-actNoun-S3 rdf:type :actantialNouns , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-actNoun-S4
+
+:LFF-par-actNoun-S4 rdf:type :actantialNouns , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-circNoun-Sinstr
+
+:LFF-par-circNoun-Sinstr rdf:type :circumstantialNouns , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-circNoun-Sloc
+
+:LFF-par-circNoun-Sloc rdf:type :circumstantialNouns , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-circNoun-Smed
+
+:LFF-par-circNoun-Smed rdf:type :circumstantialNouns , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-circNoun-Smod
+
+:LFF-par-circNoun-Smod rdf:type :circumstantialNouns , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-circNoun-Sres
+
+:LFF-par-circNoun-Sres rdf:type :circumstantialNouns , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-potActAdj-Able1
+
+:LFF-par-potActAdj-Able1 rdf:type :potentialActantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-potActAdj-Able2
+
+:LFF-par-potActAdj-Able2 rdf:type :potentialActantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-potActAdj-Able3
+
+:LFF-par-potActAdj-Able3 rdf:type :potentialActantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-potActAdj-Able4
+
+:LFF-par-potActAdj-Able4 rdf:type :potentialActantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-qualActAdj-Qual1
+
+:LFF-par-qualActAdj-Qual1 rdf:type :qualifyingActantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-qualActAdj-Qual2
+
+:LFF-par-qualActAdj-Qual2 rdf:type :qualifyingActantialAdjectives , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-res-Result1
+
+:LFF-par-res-Result1 rdf:type :resultative , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-res-Result2
+
+:LFF-par-res-Result2 rdf:type :resultative , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-res-Result3
+
+:LFF-par-res-Result3 rdf:type :resultative , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-setP-Holo
+
+:LFF-par-setP-Holo rdf:type :setPart , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-setP-Hyper
+
+:LFF-par-setP-Hyper rdf:type :setPart , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-setP-Hypo
+
+:LFF-par-setP-Hypo rdf:type :setPart , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-setP-Mero
+
+:LFF-par-setP-Mero rdf:type :setPart , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-syntConv-A0
+
+:LFF-par-syntConv-A0 rdf:type :syntacticConversion , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-syntConv-Adv0
+
+:LFF-par-syntConv-Adv0 rdf:type :syntacticConversion , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-syntConv-S0
+
+:LFF-par-syntConv-S0 rdf:type :syntacticConversion , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-par-syntConv-V0
+
+:LFF-par-syntConv-V0 rdf:type :syntacticConversion , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-AntiBon
+
+:LFF-synt-AntiBon rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-AntiMagn
+
+:LFF-synt-AntiMagn rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-AntiPos2
+
+:LFF-synt-AntiPos2 rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-AntiVer
+
+:LFF-synt-AntiVer rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Bon
+
+:LFF-synt-Bon rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Centr
+
+:LFF-synt-Centr rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Culm
+
+:LFF-synt-Culm rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Degrad
+
+:LFF-synt-Degrad rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Denouveau
+
+:LFF-synt-Denouveau rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Epit
+
+:LFF-synt-Epit rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Excess
+
+:LFF-synt-Excess rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Germ
+
+:LFF-synt-Germ rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Instr
+
+:LFF-synt-Instr rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Involv
+
+:LFF-synt-Involv rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Magn
+
+:LFF-synt-Magn rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Manif
+
+:LFF-synt-Manif rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Minus
+
+:LFF-synt-Minus rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Obstr
+
+:LFF-synt-Obstr rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Pejor
+
+:LFF-synt-Pejor rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Plus
+
+:LFF-synt-Plus rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Pos2
+
+:LFF-synt-Pos2 rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Prepar
+
+:LFF-synt-Prepar rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Propt
+
+:LFF-synt-Propt rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Prox
+
+:LFF-synt-Prox rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Son
+
+:LFF-synt-Son rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Stop
+
+:LFF-synt-Stop rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Sympt
+
+:LFF-synt-Sympt rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-Ver
+
+:LFF-synt-Ver rdf:type :syntagmaticLFF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-causV-Caus
+
+:LFF-synt-causV-Caus rdf:type :causationVerbs , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-causV-Liqu
+
+:LFF-synt-causV-Liqu rdf:type :causationVerbs , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-causV-Perm
+
+:LFF-synt-causV-Perm rdf:type :causationVerbs , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-phasV-Cont
+
+:LFF-synt-phasV-Cont rdf:type :phasalVerbs , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-phasV-Fin
+
+:LFF-synt-phasV-Fin rdf:type :phasalVerbs , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-phasV-Incep
+
+:LFF-synt-phasV-Incep rdf:type :phasalVerbs , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Fact0
+
+:LFF-synt-realV-Fact0 rdf:type :Fact , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Fact1
+
+:LFF-synt-realV-Fact1 rdf:type :Fact , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Fact2
+
+:LFF-synt-realV-Fact2 rdf:type :Fact , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Fact3
+
+:LFF-synt-realV-Fact3 rdf:type :Fact , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Fact_xt
+
+:LFF-synt-realV-Fact_xt rdf:type :Fact , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Labreal12
+
+:LFF-synt-realV-Labreal12 rdf:type :Labreal , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Labreal13
+
+:LFF-synt-realV-Labreal13 rdf:type :Labreal , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Labreal1_xt
+
+:LFF-synt-realV-Labreal1_xt rdf:type :Labreal , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Labreal21
+
+:LFF-synt-realV-Labreal21 rdf:type :Labreal , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Labreal23
+
+:LFF-synt-realV-Labreal23 rdf:type :Labreal , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Real1
+
+:LFF-synt-realV-Real1 rdf:type :Real , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Real2
+
+:LFF-synt-realV-Real2 rdf:type :Real , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Real3
+
+:LFF-synt-realV-Real3 rdf:type :Real , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Real4
+
+:LFF-synt-realV-Real4 rdf:type :Real , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-realV-Real_xt
+
+:LFF-synt-realV-Real_xt rdf:type :Real , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-spacL-Loc
+
+:LFF-synt-spacL-Loc rdf:type :spaceLocalization , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Func0
+
+:LFF-synt-suppV-Func0 rdf:type :Func , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Func1
+
+:LFF-synt-suppV-Func1 rdf:type :Func , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Func2
+
+:LFF-synt-suppV-Func2 rdf:type :Func , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Func3
+
+:LFF-synt-suppV-Func3 rdf:type :Func , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Labor12
+
+:LFF-synt-suppV-Labor12 rdf:type :Labor , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Labor21
+
+:LFF-synt-suppV-Labor21 rdf:type :Labor , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Oper1
+
+:LFF-synt-suppV-Oper1 rdf:type :Oper , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Oper2
+
+:LFF-synt-suppV-Oper2 rdf:type :Oper , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Oper3
+
+:LFF-synt-suppV-Oper3 rdf:type :Oper , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lffam#LFF-synt-suppV-Oper4
+
+:LFF-synt-suppV-Oper4 rdf:type :Oper , owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net

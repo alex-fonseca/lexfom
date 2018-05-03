@@ -1,0 +1,707 @@
+@prefix : <C:/Users/bd291193/workspace/lexfom/lexfom/lfrep.owl#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix lffam: <C:/Users/bd291193/workspace/lexfom/lexfom/lffam.owl#> .
+@prefix lfsem: <C:/Users/bd291193/workspace/lexfom/lexfom/lfsem.owl#> .
+@prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix semiotics: <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#> .
+@base <C:/Users/bd291193/workspace/lexfom/lexfom/lfrep.owl> .
+
+<C:/Users/bd291193/workspace/lexfom/lexfom/lfrep.owl> rdf:type owl:Ontology ;                                                                              
+                                                      owl:imports <C:/Users/bd291193/workspace/lexfom/lexfom/lffam.owl> ,
+                                                                  <C:/Users/bd291193/workspace/lexfom/lexfom/lfsem.owl> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#andComposition
+
+:andComposition rdf:type owl:FunctionalProperty ,
+                         owl:InverseFunctionalProperty ,
+                         owl:ObjectProperty ,
+                         owl:SymmetricProperty ;
+                                                            
+				rdfs:subPropertyOf :complexCompositionType .
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#orComposition
+
+:orComposition rdf:type owl:FunctionalProperty ,
+                        owl:InverseFunctionalProperty ,
+                        owl:ObjectProperty ,
+                        owl:SymmetricProperty ;
+                                                            
+			   rdfs:subPropertyOf :complexCompositionType .
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#plusComposition
+
+:plusComposition rdf:type owl:FunctionalProperty ,
+                          owl:InverseFunctionalProperty ,
+                          owl:ObjectProperty ,
+                          owl:SymmetricProperty ;
+                                                            
+				 rdfs:subPropertyOf :complexCompositionType .
+				 
+				 
+###  http://www.semanticweb.org/ns/lexfom/lfrep#justapositionComposition
+				 
+:justapositionComposition rdf:type owl:FunctionalProperty ,
+								   owl:InverseFunctionalProperty ,
+								   owl:ObjectProperty ,
+								   owl:SymmetricProperty ;
+                                                            
+						  rdfs:subPropertyOf :complexCompositionType .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#belongsToLFFamily
+
+:belongsToLFFamily rdf:type owl:ObjectProperty ;
+                                                               
+    rdfs:range :lexicalFunctionFamily ;
+                                                               
+    rdfs:domain :lexicalFunction .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#classSystem
+
+:classSystem rdf:type owl:ObjectProperty ;
+                                                         
+    rdfs:domain :lexicalFunction .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#combinatorialPerspective
+
+:combinatorialPerspective rdf:type owl:ObjectProperty ;
+                                                                      
+    rdfs:subPropertyOf :classSystem .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#communicationalPerspective
+
+:communicationalPerspective rdf:type owl:ObjectProperty ;
+                                                                        
+    rdfs:subPropertyOf :classSystem .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#complexCompositionType
+
+:complexCompositionType rdf:type owl:ObjectProperty ;
+                                                                    
+    rdfs:range :componentComplexLF ;
+                                                                    
+    rdfs:domain :componentComplexLF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#constituentComplexLF
+
+:constituentComplexLF rdf:type owl:ObjectProperty ;
+                                                                  
+    rdfs:domain :complexLF ;
+                                                                  
+    rdfs:range :componentComplexLF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#correspondsTo
+
+:correspondsTo rdf:type owl:ObjectProperty ;
+                                                           
+    rdfs:domain :componentComplexLF ;
+                                                           
+    rdfs:range :lexicalFunction .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#dimension
+
+:dimension rdf:type owl:ObjectProperty ;
+                                                       
+    rdfs:domain :lexicalFunction ;
+                                                       
+    rdfs:range :typeLF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#gloss
+
+:gloss rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#hasDimensionMode
+
+:hasDimensionMode rdf:type owl:ObjectProperty ;
+                                                              
+    rdfs:range :dimensionMode ;
+                                                              
+    rdfs:domain :lexicalFunction ;
+                                                              
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#hasEquivDegree
+
+:hasEquivDegree rdf:type owl:ObjectProperty ;
+                                                            
+    rdfs:range :equivalenceDegree ;
+                                                            
+    rdfs:domain :lexicalFunction .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#hasIntensificationMode
+
+:hasIntensificationMode rdf:type owl:ObjectProperty ;
+                                                                    
+    rdfs:range :intensificationMode ;
+                                                                    
+    rdfs:domain :lexicalFunction .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#hasLFMeaning
+
+:hasLFMeaning rdf:type owl:ObjectProperty ;
+                                                          
+    rdfs:domain :lexicalFunction .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#hasSpatialSpecification
+
+:hasSpatialSpecification rdf:type owl:ObjectProperty ;
+                                                                     
+    rdfs:domain :lexicalFunction ;
+                                                                     
+    rdfs:range :spatialSpecification .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#hasSyntActant
+
+:hasSyntActant rdf:type owl:ObjectProperty ;
+                                                           
+    rdfs:domain :lexicalFunction ;
+                                                           
+    rdfs:range :syntacticActant .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#hasSyntActantModifier
+
+:hasSyntActantModifier rdf:type owl:ObjectProperty ;
+                                                                   
+    rdfs:domain :lexicalFunction ;
+                                                                   
+    rdfs:range :syntacticActantModifiers .
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#posPerspective
+
+:posPerspective rdf:type owl:ObjectProperty ;
+                                                            
+    rdfs:subPropertyOf :classSystem .
+
+
+
+###  \lexfom\lfrep.owl#hasCircunstanceSpecification
+
+:hasCircunstanceSpecification rdf:type owl:ObjectProperty ;
+                              
+    rdfs:range :circunstanceSpecification ;
+                              
+    rdfs:domain :lexicalFunction .
+
+
+
+###  \lexfom\lfrep.owl#hasRealizationDegree
+
+:hasRealizationDegree rdf:type owl:ObjectProperty ;
+                      
+    rdfs:domain :lexicalFunction ;
+                      
+    rdfs:range :realizationDegree .
+
+
+
+###  \lexfom\lfrep.owl#hasSpecializationType
+
+:hasSpecializationType rdf:type owl:ObjectProperty ;
+                       
+    rdfs:domain :lexicalFunction ;
+                       
+    rdfs:range :specializationType .
+
+
+
+###  \lexfom\lfrep.owl#semanticPerspective
+
+:semanticPerspective rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:range :semanticPerspective ;
+                     
+                     rdfs:subPropertyOf :classSystem ;
+                     
+                     rdfs:domain :lexicalFunction .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lexicalFunction
+
+:lexicalFunction rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#simpleLF
+
+:simpleLF rdf:type owl:Class ;
+                                                      
+		  rdfs:subClassOf :lexicalFunction .
+	
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#complexLF
+
+:complexLF rdf:type owl:Class ;
+                                                       
+		  rdfs:subClassOf :lexicalFunction .
+		  
+###  http://www.semanticweb.org/ns/lexfom/lfrep#ParadigmaticLF
+
+:ParadigmaticLF rdf:type owl:Class ;
+                                                            
+          rdfs:subClassOf :lexicalFunction .
+		  
+###  http://www.semanticweb.org/ns/lexfom/lfrlf#SyntagmaticLF
+
+:SyntagmaticLF rdf:type owl:Class ;
+                                                           
+          rdfs:subClassOf :lexicalFunction .
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#circunstanceSpecification
+
+:circunstanceSpecification rdf:type owl:Class ;
+                                                                       
+    rdfs:subClassOf :constituentsLF .
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#componentComplexLF
+
+:componentComplexLF rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#dimensionMode
+
+:dimensionMode rdf:type owl:Class ;
+                                                           
+    rdfs:subClassOf :constituentsLF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#equivalenceDegree
+
+:equivalenceDegree rdf:type owl:Class ;
+                                                               
+    rdfs:subClassOf :constituentsLF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#intensificationMode
+
+:intensificationMode rdf:type owl:Class ;
+                                                                 
+    rdfs:subClassOf :constituentsLF .
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#spatialSpecification
+
+:spatialSpecification rdf:type owl:Class ;
+                                                                  
+    rdfs:subClassOf :constituentsLF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActant
+
+:syntacticActant rdf:type owl:Class ;
+                                                             
+    rdfs:subClassOf :constituentsLF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#syntacticActantModifiers
+
+:syntacticActantModifiers rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#typeLF
+
+:typeLF rdf:type owl:Class .
+
+
+
+###  \lexfom\lfrep.owl#constituentsLF
+
+:constituentsLF rdf:type owl:Class .
+
+
+
+###  \lexfom\lfrep.owl#realizationDegree
+
+:realizationDegree rdf:type owl:Class ;
+                   
+    rdfs:subClassOf :constituentsLF .
+
+
+
+###  \lexfom\lfrep.owl#specializationType
+
+:specializationType rdf:type owl:Class .
+
+
+
+###  \lexfom\lfrep.owl#standardness
+
+:standardness rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-cs-inst
+
+:lfrep-const-cs-inst rdf:type :circunstanceSpecification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-cs-loc
+
+:lfrep-const-cs-loc rdf:type :circunstanceSpecification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-cs-med
+
+:lfrep-const-cs-med rdf:type :circunstanceSpecification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-cs-mod
+
+:lfrep-const-cs-mod rdf:type :circunstanceSpecification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-cs-res
+
+:lfrep-const-cs-res rdf:type :circunstanceSpecification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-dm-amount
+
+:lfrep-const-dm-amount rdf:type :dimensionMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-dm-time
+
+:lfrep-const-dm-time rdf:type :dimensionMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-ed-inter
+
+:lfrep-const-ed-inter rdf:type :equivalenceDegree , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-ed-less
+
+:lfrep-const-ed-less rdf:type :equivalenceDegree , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-ed-more
+
+:lfrep-const-ed-more rdf:type :equivalenceDegree , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-im-behaviour
+
+:lfrep-const-im-behaviour rdf:type :intensificationMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-im-effect
+
+:lfrep-const-im-effect rdf:type :intensificationMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-im-height
+
+:lfrep-const-im-height rdf:type :intensificationMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-im-length
+
+:lfrep-const-im-length rdf:type :intensificationMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-im-size
+
+:lfrep-const-im-size rdf:type :intensificationMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-im-speed
+
+:lfrep-const-im-speed rdf:type :intensificationMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-im-strength
+
+:lfrep-const-im-strength rdf:type :intensificationMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-im-thickness
+
+:lfrep-const-im-thickness rdf:type :intensificationMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-im-width
+
+:lfrep-const-im-width rdf:type :intensificationMode , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-sa-ASynt_1
+
+:lfrep-const-sa-ASynt_1 rdf:type :syntacticActant , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-sa-ASynt_2
+
+:lfrep-const-sa-ASynt_2 rdf:type :syntacticActant , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-sa-ASynt_3
+
+:lfrep-const-sa-ASynt_3 rdf:type :syntacticActant , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-sa-ASynt_4
+
+:lfrep-const-sa-ASynt_4 rdf:type :syntacticActant , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-sa-ASynt_xt
+
+:lfrep-const-sa-ASynt_xt rdf:type :syntacticActant , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-ss-spatialAB
+
+:lfrep-const-ss-spatialAB rdf:type :spatialSpecification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-ss-spatialAD
+
+:lfrep-const-ss-spatialAD rdf:type :spatialSpecification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-ss-spatialIN
+
+:lfrep-const-ss-spatialIN rdf:type :spatialSpecification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-const-ss-spatialTEMP
+
+:lfrep-const-ss-spatialTEMP rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-sam-XYchange
+
+:lfrep-sam-XYchange rdf:type :syntacticActantModifiers , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-sam-lfAppliedToActant_1
+
+:lfrep-sam-lfAppliedToActant_1 rdf:type :syntacticActantModifiers , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-sam-setOFIndividuals
+
+:lfrep-sam-setOFIndividuals rdf:type :syntacticActantModifiers , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-sam-simultaneousActants
+
+:lfrep-sam-simultaneousActants rdf:type :syntacticActantModifiers , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-type-paradigmaticLF
+
+:lfrep-type-paradigmaticLF rdf:type :typeLF , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lfrep-type-syntagmaticLF
+
+:lfrep-type-syntagmaticLF rdf:type :typeLF , owl:NamedIndividual .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-const-ed-sex
+
+:lfrep-const-ed-sex rdf:type :equivalenceDegree , owl:NamedIndividual .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-const-rd-realDeg_I
+
+:lfrep-const-rd-realDeg_I rdf:type owl:NamedIndividual ,
+                                   :realizationDegree .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-const-rd-realDeg_II
+
+:lfrep-const-rd-realDeg_II rdf:type owl:NamedIndividual ,
+                                    :realizationDegree .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-const-rd-realDeg_III
+
+:lfrep-const-rd-realDeg_III rdf:type owl:NamedIndividual ,
+                                     :realizationDegree .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-const-sa-ASynt_5
+
+:lfrep-const-sa-ASynt_5 rdf:type :syntacticActant ,
+                                 owl:NamedIndividual .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-st-prototype
+
+:lfrep-st-prototype rdf:type owl:NamedIndividual ,
+                             :specializationType .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-st-usual
+
+:lfrep-st-usual rdf:type owl:NamedIndividual ,
+                         :specializationType .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-stand-locally_semi-standard
+
+:lfrep-stand-locally_semi-standard rdf:type owl:NamedIndividual ,
+                                            :standardness .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-stand-locally_standard
+
+:lfrep-stand-locally_standard rdf:type owl:NamedIndividual ,
+                                       :standardness .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-stand-proposed_simple_standard
+
+:lfrep-stand-proposed_simple_standard rdf:type owl:NamedIndividual ,
+                                               :standardness .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-stand-proposed_standard
+
+:lfrep-stand-proposed_standard rdf:type owl:NamedIndividual ,
+                                        :standardness .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-stand-semi-standard
+
+:lfrep-stand-semi-standard rdf:type owl:NamedIndividual ,
+                                    :standardness .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-stand-simple_standard
+
+:lfrep-stand-simple_standard rdf:type owl:NamedIndividual ,
+                                      :standardness .
+
+
+
+###  \lexfom\lfrep.owl#lfrep-stand-standard
+
+:lfrep-stand-standard rdf:type owl:NamedIndividual ,
+                               :standardness .
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net

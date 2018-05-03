@@ -1,0 +1,191 @@
+@prefix : <C:/Users/bd291193/workspace/lexfom/lexfom/lfrel.owl#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix lfrep: <C:/Users/bd291193/workspace/lexfom/lexfom/lfrep.owl#> .
+@prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
+@prefix semiotics: <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#> .
+@base <C:/Users/bd291193/workspace/lexfom/lexfom/lfrel.owl> .
+
+<C:/Users/bd291193/workspace/lexfom/lexfom/lfrel.owl> rdf:type owl:Ontology ;                                                                               
+                                                      owl:imports <http://www.w3.org/ns/lemon/ontolex> ,
+																  <C:/Users/bd291193/workspace/lexfom/lexfom/lfrep.owl> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#hasLFKeyword
+
+:hasLFKeyword rdf:type owl:ObjectProperty ;
+                                                        
+                                                        rdfs:domain :lexicalRelationLF ;
+                                                        
+                                                        rdfs:range ontolex:LexicalSense ;
+                                                        
+                                                        rdfs:domain [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasLFKeyword ;
+                                                                      owl:onClass :lexicalRelationLF ;
+                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#hasLexicalFunction
+
+:hasLexicalFunction rdf:type owl:ObjectProperty ;
+                                                                
+                                                                rdfs:range lfrep:lexicalFunction ;
+                                                                
+                                                                rdfs:domain [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :hasLexicalFunction ;
+                                                                              owl:onClass :lexicalRelationLF ;
+                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                                            ] .
+
+
+
+###  https://dl.dropboxusercontent.com/u/40531224/lexfom/lfrel.owl#hasGovPattern
+
+:hasGovPattern rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :lexicalRelationLF .
+
+
+
+###  https://dl.dropboxusercontent.com/u/40531224/lexfom/lfrel.owl#hasLexicalRelationDirection
+
+:hasLexicalRelationDirection rdf:type owl:ObjectProperty ;
+                             
+                             rdfs:domain :syntagmaticRelation ;
+                             
+                             rdfs:range :lexicalRelationDirection .
+
+
+
+###  https://dl.dropboxusercontent.com/u/40531224/lexfom/lfrel.owl#hasLFValue
+
+:hasLFValue rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :lexicalRelationLF ;
+          
+          rdfs:range ontolex:LexicalSense .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  https://dl.dropboxusercontent.com/u/40531224/lexfom/lfrel.owl#hasFusedElement
+
+:hasFusedElement rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:domain :lexicalRelationLF ;
+                 
+                 rdfs:range xsd:boolean .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#lexicalRelationLF
+
+:lexicalRelationLF rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#paradigmaticRelation
+
+###:paradigmaticRelation rdf:type owl:Class ;
+:ParadigmaticLFSenseRelation rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:subClassOf :lexicalRelationLF .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#syntagmaticRelation
+
+###:syntagmaticRelation rdf:type owl:Class ;
+:SyntagmaticLFSenseRelation rdf:type owl:Class ;
+                                                                 
+                                                                 rdfs:subClassOf :lexicalRelationLF .
+
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalSense
+
+ontolex:LexicalSense rdf:type owl:Class .
+
+
+
+###  https://dl.dropboxusercontent.com/u/40531224/lexfom/lfrel.owl#govPattern
+
+:govPattern rdf:type owl:Class .
+
+
+
+###  https://dl.dropboxusercontent.com/u/40531224/lexfom/lfrel.owl#lexicalRelationDirection
+
+:lexicalRelationDirection rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#LR-ParadigmaticRelation
+
+###:ParadigmaticLFSenseRelation rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfrep#LR-SyntagmaticRelation
+
+###:SyntagmaticLFSenseRelation rdf:type owl:NamedIndividual .
+
+###  https://dl.dropboxusercontent.com/u/40531224/lexfom/lfrel.owl#KeywordValue
+
+:KeywordValue rdf:type owl:NamedIndividual ,
+                       :lexicalRelationDirection .
+
+
+
+###  https://dl.dropboxusercontent.com/u/40531224/lexfom/lfrel.owl#ValueKeyword
+
+:ValueKeyword rdf:type owl:NamedIndividual ,
+                       :lexicalRelationDirection .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net

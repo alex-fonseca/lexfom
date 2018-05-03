@@ -1,0 +1,375 @@
+@prefix : <C:/Users/bd291193/workspace/lexfom/lexfom/lfsem.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <C:/Users/bd291193/workspace/lexfom/lexfom/lfsem.owl> .
+
+<C:/Users/bd291193/workspace/lexfom/lexfom/lfsem.owl> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#semanticPerspective
+
+:semanticPerspective rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#actionEvent
+
+:actionEvent rdf:type owl:Class ;
+                                                         
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#causativity
+
+:causativity rdf:type owl:Class ;
+                                                         
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#elementSet
+
+:elementSet rdf:type owl:Class ;
+                                                        
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#equivalence
+
+:equivalence rdf:type owl:Class ;
+                                                         
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#form
+
+:form rdf:type owl:Class ;
+                                                  
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#location
+
+:location rdf:type owl:Class ;
+                                                      
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#opposition
+
+:opposition rdf:type owl:Class ;
+                                                        
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#participants
+
+:participants rdf:type owl:Class ;
+                                                          
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#phaseAspect
+
+:phaseAspect rdf:type owl:Class ;
+                                                         
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#qualification
+
+:qualification rdf:type owl:Class ;
+                                                           
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#semanticallyEmptyVerb
+
+:semanticallyEmptyVerb rdf:type owl:Class ;
+                                                                   
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#supportVerb
+
+:supportVerb rdf:type owl:Class ;
+                                                         
+    rdfs:subClassOf :semanticPerspective .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ae-attempt
+
+:pSem-ae-attempt rdf:type :actionEvent , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ae-creation
+
+:pSem-ae-creation rdf:type :actionEvent , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ae-decreaseDegradation
+
+:pSem-ae-decreaseDegradation rdf:type :actionEvent , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ae-disparationExistencialCease
+
+:pSem-ae-disparationExistencialCease rdf:type :actionEvent , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ae-imminence
+
+:pSem-ae-imminence rdf:type :actionEvent , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ae-increaseImprovement
+
+:pSem-ae-increaseImprovement rdf:type :actionEvent , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ae-manifestation
+
+:pSem-ae-manifestation rdf:type :actionEvent , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ae-nonOperationRefusal
+
+:pSem-ae-nonOperationRefusal rdf:type :actionEvent , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ae-utilizationTypicalOperation
+
+:pSem-ae-utilizationTypicalOperation rdf:type :actionEvent , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ca-causativity
+
+:pSem-ca-causativity rdf:type :causativity , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-eq-conversionEquiv
+
+:pSem-eq-conversionEquiv rdf:type :equivalence , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-eq-similarLexies
+
+:pSem-eq-similarLexies rdf:type :equivalence , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-eq-syntacticConversion
+
+:pSem-eq-syntacticConversion rdf:type :equivalence , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-es-family
+
+:pSem-es-family rdf:type :elementSet , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-es-hierarchies
+
+:pSem-es-hierarchies rdf:type :elementSet , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-es-leaderTeam
+
+:pSem-es-leaderTeam rdf:type :elementSet , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-es-measure
+
+:pSem-es-measure rdf:type :elementSet , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-es-meronymyHolonymy
+
+:pSem-es-meronymyHolonymy rdf:type :elementSet , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-es-regularElementSet
+
+:pSem-es-regularElementSet rdf:type :elementSet , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-ev-semanticallyEmptyVerb
+
+:pSem-ev-semanticallyEmptyVerb rdf:type :semanticallyEmptyVerb , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-fm-instrument
+
+:pSem-fm-instrument rdf:type :form , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-fm-realizationForm
+
+:pSem-fm-realizationForm rdf:type :form , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-fm-utilizationForm
+
+:pSem-fm-utilizationForm rdf:type :form , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-lc-spatialTemporal
+
+:pSem-lc-spatialTemporal rdf:type :location , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-lc-typicalPlace
+
+:pSem-lc-typicalPlace rdf:type :location , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-op-conversionOpposite
+
+:pSem-op-conversionOpposite rdf:type :opposition , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-op-genderEquivalent
+
+:pSem-op-genderEquivalent rdf:type :opposition , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-op-semanticOpposite
+
+:pSem-op-semanticOpposite rdf:type :opposition , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-pa-continuation
+
+:pSem-pa-continuation rdf:type :phaseAspect , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-pa-duration
+
+:pSem-pa-duration rdf:type :phaseAspect , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-pa-preparation
+
+:pSem-pa-preparation rdf:type :phaseAspect , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-pa-reiteration
+
+:pSem-pa-reiteration rdf:type :phaseAspect , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-pa-resultPhase
+
+:pSem-pa-resultPhase rdf:type :phaseAspect , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-pa-start
+
+:pSem-pa-start rdf:type :phaseAspect , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-pa-termination
+
+:pSem-pa-termination rdf:type :phaseAspect , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-pp-externalActant
+
+:pSem-pp-externalActant rdf:type :participants , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-pp-keywordActant
+
+:pSem-pp-keywordActant rdf:type :participants , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-qf-intensity
+
+:pSem-qf-intensity rdf:type :qualification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-qf-judgement
+
+:pSem-qf-judgement rdf:type :qualification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-qf-physicalAppearance
+
+:pSem-qf-physicalAppearance rdf:type :qualification , owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/ns/lexfom/lfsem#pSem-sv-supportVerb
+
+:pSem-sv-supportVerb rdf:type :supportVerb , owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
