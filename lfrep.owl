@@ -1,4 +1,4 @@
-@prefix : <C:/Users/bd291193/workspace/lexfom/lexfom/lfrep.owl#> .
+@prefix : <https://github.com/alex-fonseca/lexfom/blob/master/lfrep.owl#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,17 +7,17 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix lffam: <C:/Users/bd291193/workspace/lexfom/lexfom/lffam.owl#> .
-@prefix lfsem: <C:/Users/bd291193/workspace/lexfom/lexfom/lfsem.owl#> .
+@prefix lffam: <https://github.com/alex-fonseca/lexfom/blob/master/lffam.owl#> .
+@prefix lfsem: <https://github.com/alex-fonseca/lexfom/blob/master/lfsem.owl#> .
 @prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
 @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
 @prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
 @prefix semiotics: <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#> .
-@base <C:/Users/bd291193/workspace/lexfom/lexfom/lfrep.owl> .
+@base <https://github.com/alex-fonseca/lexfom/blob/master/lfrep.owl> .
 
-<C:/Users/bd291193/workspace/lexfom/lexfom/lfrep.owl> rdf:type owl:Ontology ;                                                                              
-                                                      owl:imports <C:/Users/bd291193/workspace/lexfom/lexfom/lffam.owl> ,
-                                                                  <C:/Users/bd291193/workspace/lexfom/lexfom/lfsem.owl> .
+<https://github.com/alex-fonseca/lexfom/blob/master/lfrep.owl> rdf:type owl:Ontology ;                                                                              
+                                                      owl:imports <https://github.com/alex-fonseca/lexfom/blob/master/lffam.owl> ,
+                                                                  <https://github.com/alex-fonseca/lexfom/blob/master/lfsem.owl> .
 
 
 #################################################################
