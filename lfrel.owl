@@ -1,4 +1,4 @@
-@prefix : <https://github.com/alex-fonseca/lexfom/blob/master/lfrel.owl#> .
+@prefix : <http://github.com/alex-fonseca/lexfom/lfrel.owl#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,15 +7,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix lfrep: <https://github.com/alex-fonseca/lexfom/blob/master/lfrep.owl#> .
+@prefix lfrep: <http://github.com/alex-fonseca/lexfom/lfrep.owl#> .
 @prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
 @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 @prefix vartrans: <http://www.w3.org/ns/lemon/vartrans#> .
 @prefix semiotics: <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#> .
-@base <https://github.com/alex-fonseca/lexfom/blob/master/lfrel.owl> .
+@base <http://github.com/alex-fonseca/lexfom/lfrel.owl> .
 
-<https://github.com/alex-fonseca/lexfom/blob/master/lfrel.owl> rdf:type owl:Ontology ;                                                                               
+<http://github.com/alex-fonseca/lexfom/lfrel.owl> rdf:type owl:Ontology ;                                                                               
                                                       owl:imports <http://www.w3.org/ns/lemon/ontolex> ,
 																  <C:/Users/bd291193/workspace/lexfom/lexfom/lfrep.owl> .
 
